@@ -1,0 +1,20 @@
+Step1: Download malware (https://github.com/rampriyakilari/ICS-Needs/blob/main/malware.rar)
+
+Step2: Basic Information about malware:
+Name: file.exe
+Media Type: application/x-msdownload
+SHA-256: d01d08621690c1a7a0f41bdd1bb02ec05d418ef68b06cd3cfd54fbb3f58ba80a Report ID: 37cec6e6-0778-4c35-9cb3-d177c1e6e34a
+Submission Date: 29/09/2026, 02:24:27 
+
+Step3: Malware Analysis
+> Report from filescan.io
+In filescan.io
+> Report in virustotal
+In virustotal.com
+
+Step 4:-
+Vulnerability Assessment
+> Report in Kali using Nmap tool
+> Report in Windows using Nmap tool
+> Final deduction
+> Final report.
