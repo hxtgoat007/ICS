@@ -10,8 +10,6 @@ $ ifconfig
 $ sudo iptables -A INPUT -s 192.168.178.1 -j DROP  
   [sudo] password for kali: kali
 
-$ sudo iptables -A INPUT -s 192.168.178.1 -j DROP
-
 > ping 172.16.105.158                       
 
 $ sudo iptables -D INPUT -s 192.168.178.1 -j DROP
