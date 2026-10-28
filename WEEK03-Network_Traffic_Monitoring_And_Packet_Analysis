@@ -1,0 +1,16 @@
+Before Starting Kali Linux check network adapter(It is at left side below Power-on in Devices). It should be NAT or Bridged.
+
+Step 1: Start kali Linux in Vmware.
+Step 2: Run sudo wireshark in terminal or direct open wireshark
+Step 3: Select Active Interface and double click on it(e.g., eth0)
+Step 4: To Start capture click on blue shark pin icon, then network packets begin appearing 
+Step 5: Generate traffic using browser in https://www.google.com or ping google.com in terminal.
+Step 6: Apply filters like icmp, dns, tcp
+Step 7: Inspect packet details 
+Step 8: Check TCP Stream
+>>commands:
+$ curl http://example.com
+$ curl http://google.com
+Right click on TCP Packet > Follow - TCP Stream
+Step 9: Click on File > save as .pcapng. > To Stop capture CTRL+C
+Step 10: Analyze Statistics
