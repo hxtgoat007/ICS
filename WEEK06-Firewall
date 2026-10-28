@@ -1,0 +1,27 @@
+$ --> in Kali Linux
+> --> in Chrome CMD
+
+$ ifconfig
+  copy the ip address like 172.16.105.158
+>ipconfig
+  copy ip address like 192.168.178.1
+>ping 172.16.105.158                                                                                                                                                                              
+ 
+$ sudo iptables -A INPUT -s 192.168.178.1 -j DROP  
+  [sudo] password for kali: kali
+
+$ sudo iptables -A INPUT -s 192.168.178.1 -j DROP
+
+> ping 172.16.105.158                       
+
+$ sudo iptables -D INPUT -s 192.168.178.1 -j DROP
+
+> ping 172.16.105.158
+  open kali firefox browser enter kali IP address(172.16.105.158) It opens Apache2 Default page  
+
+$ sudo service apache2 start
+$ sudo service mysql start
+
+$ sudo iptables -A INPUT -s 192.168.178.1 -p tcp --destination-port 80 -j DROP
+
+$ sudo iptables -D INPUT -s 192.168.178.1 -p tcp --destination-port 80 -j DROP
