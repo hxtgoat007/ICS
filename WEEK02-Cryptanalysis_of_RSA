@@ -15,10 +15,26 @@ $ openssl rsa -pubin -inform PEM -text -noout < pubkey.pem
 8. in Kali terminal copy Exponent value and then paste it in text editor
 
 >> commands:
+$ nano exploit.py
+
+CODE:
+from Crypto.PublicKey import RSA
+from Crypto.Util.number import inverse
+import base64
+n= ##Modulus##
+p= 
+q=
+e= ##Exponent##
+phi=(p-1)*(q-1)
+d=inverse(e,phi)
+key=RSA.construct((n,e,d,p,q))
+fn="private.pem"
+withopen(fn,"wb") as f:
+  f.write(key.expoetKey())
+
 $ python3 -m venv crypto
 $ source crypto/bin/activate
 $ pip install pycryptodome
-$ nano exploit.py
 $ python exploit.py
 $ ls
 $ cat private.pem
