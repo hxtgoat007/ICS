@@ -29,8 +29,8 @@ phi=(p-1)*(q-1)
 d=inverse(e,phi)
 key=RSA.construct((n,e,d,p,q))
 fn="private.pem"
-withopen(fn,"wb") as f:
-  f.write(key.expoetKey())
+with open(fn,"wb") as f:
+  f.write(key.exportKey())
 
 $ python3 -m venv crypto
 $ source crypto/bin/activate
