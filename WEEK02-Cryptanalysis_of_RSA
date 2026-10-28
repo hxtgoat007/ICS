@@ -1,0 +1,26 @@
+1. In google search rampriyakilari/ICS-Needs and download enc.txt and pubkey.pem
+2. In Kali: Create a folder rsa and paste enc.txt and pubkey.pem files in it.
+
+>> commands:
+$ ls
+$ cat enc.txt
+$ cat pubkey.pem
+$ openssl rsa -pubin -inform PEM -text -noout < pubkey.pem
+
+3. Copy the Generated Modulus
+4. Open Hexadecimal to decimal converter in chrome
+5. Paste it in Hexvalue and click convert and then copt the converted value and open text text editor in kali and paste this
+6. Now again open chrome and open factordb.com and enter the converted value and click factorize
+7. copy and paste first value in text editor and then second value
+8. in Kali terminal copy Exponent value and then paste it in text editor
+
+>> commands:
+$ python3 -m venv crypto
+$ source crypto/bin/activate
+$ pip install pycryptodome
+$ nano exploit.py
+$ python exploit.py
+$ ls
+$ cat private.pem
+$ openssl pkeyutl -decrypt -in enc.txt -out dec.txt -inkey private.pem
+$ cat dec.txt
