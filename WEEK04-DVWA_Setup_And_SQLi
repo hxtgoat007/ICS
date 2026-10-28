@@ -1,0 +1,83 @@
+sudo git clone https://github.com/digininja/DVWA.git
+
+Step 1: Navigate to the Web Root Directory
+Open the terminal and move to the Apache web server directory.
+Command:
+$ cd /var/www/html
+$ ls
+Step 2: Download the DVWA Application
+Verify that the project has been downloaded.
+$ ls
+Rename the folder.
+$ sudo mv DVWA dvwa
+Provide the necessary permissions.
+$ sudo chmod -R 777 dvwa
+Step 3: Configure DVWA
+Move to the DVWA configuration directory.
+$ cd dvwa
+$ ls
+$ cd config
+Check the available files.
+$ ls
+Copy the configuration template.
+$ sudo cp config.inc.php.dist config.inc.php
+Edit the configuration file.
+$ sudo nano config.inc.php
+Modify the following database settings:
+$_DVWA['db_server']   = '127.0.0.1';
+$_DVWA['db_database'] = 'dvwa';
+$_DVWA['db_user']     = 'admin';
+$_DVWA['db_password'] = 'password';
+Save the file.
+Verify the configuration.
+$ sudo cat config.inc.php
+Step 4: Start the Database Server
+Start the MySQL service.
+$ sudo service mysql start
+Login as the root user.
+$ sudo mysql -u root -p
+Create the DVWA database.
+> Create database dvwa;
+Create a database user.
+> Create user admin@localhost identified by 'password';
+Grant privileges.
+> grant all on dvwa.* to admin@localhost;
+/*
+Apply the changes.
+> FLUSH PRIVILEGES;
+*/
+Exit MySQL.
+> exit;
+
+Step 5: Configure PHP
+Navigate to the PHP configuration directory.
+$ cd /etc/php/8.4/apache2
+$ ls
+Open the PHP configuration file.
+$ sudo nano php.ini
+Modify the required PHP settings (allow_ul_include=ON), save the file, and exit.
+Step 6: Start Apache and MySQL Services
+Start the Apache web server.
+$ sudo service apache2 start
+Ensure that the database service is running.
+$ sudo service mysql start
+
+Step 7: Open DVWA in the Browser
+Open a web browser and enter:
+http://localhost/dvwa
+Login using the default credentials:
+•	Username: admin 
+•	Password: password 
+Click Create/Reset Database.
+Step 8: Configure the Security Level
+1.	Login to DVWA. 
+2.	Select DVWA Security. 
+3.	Change the security level to Low. 
+4.	Click Submit. 
+Step 9: Open the SQL Injection Module
+1.	From the DVWA menu, click SQL Injection. 
+2.	Observe the input field requesting a User ID. 
+Enter a valid User ID:
+1
+Click Submit.
+1’OR’1’=’1’#
