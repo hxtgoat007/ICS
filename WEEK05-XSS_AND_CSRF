@@ -32,12 +32,3 @@ or
 7.	Submit the request. 
 Expected Result:
 If additional command output is displayed, the application is vulnerable to command injection.
-
-
-
-
-XSS Attack:-
-
-
-CSRF ATTACK:-
-
