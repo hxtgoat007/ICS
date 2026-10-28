@@ -1,1 +1,43 @@
+>>> Cross-Site Scripting (XSS) Attack
+1.	Open DVWA. 
+2.	Login to the application. 
+3.	Navigate to XSS (Reflected) or XSS (Stored) module. 
+4.	Set Security Level to Low. 
+5.	Enter the following payload in the input field: <script>alert('Attack')</script>
+6.	Submit the form. 
+7.	Observe whether a popup alert appears. 
+Expected Result:
+If the alert box appears, the application is vulnerable to XSS.
+
+>>> Cross-Site Request Forgery (CSRF) Attack
+1.	Open DVWA. 
+2.	Navigate to CSRF module. 
+3.	Set Security Level to Low. 
+4.	Change password and test credentials
+Expected Result:
+The victim's password changes without explicit authorization.
+
+>>> Command Injection Attack
+1.	Open DVWA. 
+2.	Navigate to Command Injection module. 
+3.	Set Security Level to Low. 
+4.	Enter a valid IP address: 
+127.0.0.1
+5.	Verify normal output. 
+6.	Try appending a command: 
+Linux:
+127.0.0.1&&net user
+or
+127.0.0.1 | ls
+7.	Submit the request. 
+Expected Result:
+If additional command output is displayed, the application is vulnerable to command injection.
+
+
+
+
+XSS Attack:-
+
+
+CSRF ATTACK:-
 
