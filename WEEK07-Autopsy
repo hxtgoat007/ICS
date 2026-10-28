@@ -1,0 +1,91 @@
+Before Creating Autopsy Case Create On Empty Folder Give Name Email Analysis
+Step 1: Open Autopsy
+Select: Create New Case
+
+Step 2: Create Case
+Enter:
+Case Name:     Exp7
+Base Directory: Email Analysis Saved Folder
+Case Number:   7
+Examiner:Student
+Click Finish.
+
+Step 3: Select Host
+If Autopsy asks for the host, select:
+Generate new host name based on data source name
+Click Next.
+
+Step 4: Add Evidence
+Add Data Source
+Select:
+Disk Image or VM File
+Click Next.
+
+Step 5: Select E01 Image
+Select:
+C:\Forensic_Images\EmailEvidence.E01
+Click Next.
+
+Step 6: Processing
+If your Autopsy version displays ingest/processing options, enable useful modules such as:
+File Type Identification
+Keyword Search
+If the option does not appear, continue with the default processing.
+Click next and finish.
+
+Step 7: Examine Email Messages
+In the left panel, open:
+Data Artifacts
+       ↓
+E-Mail Messages
+In your case, you may see:
+E-Mail Messages (4)
+Click it.
+
+Step 8: Examine Email Headers
+Select an email and examine:
+From
+To
+Subject
+Date/Time
+Message-ID
+Record the information.
+
+Step 9: Examine Attachment
+Open the email containing an attachment.
+Check:
+Attachment name
+Attachment type
+Attachment contents/metadata
+
+Step 10: Examine Suspicious Email
+Open the suspicious email.
+Check for:
+Suspicious sender
+Urgent request
+Password request
+Account verification
+Suspicious links
+Suspicious attachment
+
+Step 11: Examine Incomplete Email
+Open the incomplete email.
+Check which header fields are available and which are missing.
+
+Step 12: Keyword Search
+Use Keyword Search.
+Search for:
+urgent
+password
+verification
+account
+confidential
+Record the matching results.
+
+Step 13: Generate Report
+Use:
+Generate Report
+Select an available format such as:
+HTML
+PDF
+CSV
