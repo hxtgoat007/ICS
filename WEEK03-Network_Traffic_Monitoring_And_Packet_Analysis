@@ -1,16 +1,83 @@
-Before Starting Kali Linux check network adapter(It is at left side below Power-on in Devices). It should be NAT or Bridged.
+Experiment: Working with Sniffers for Monitoring Network Communication Using Wireshark in Kali Linux
+Step-by-Step Procedure
+Step 1: Open Terminal
+1.	Log in to Kali Linux.
+2.	Open the terminal.
+ 
+Step 2: Launch Wireshark
+Type the following command:
+Sudo wireshark
+Or open it from:
+Applications → Sniffing & Spoofing → Wireshark
+  
+Step 3: Select a Network Interface
+1.	Wireshark displays available interfaces.
+2.	Select the active interface:
+o	eth0 (Ethernet)
+o	wlan0 (Wireless)
+3.	Double-click the interface to start packet capturing.
 
-Step 1: Start kali Linux in Vmware.
-Step 2: Run sudo wireshark in terminal or direct open wireshark
-Step 3: Select Active Interface and double click on it(e.g., eth0)
-Step 4: To Start capture click on blue shark pin icon, then network packets begin appearing 
-Step 5: Generate traffic using browser in https://www.google.com or ping google.com in terminal.
-Step 6: Apply filters like icmp, dns, tcp
-Step 7: Inspect packet details 
-Step 8: Check TCP Stream
->>commands:
-$ curl http://example.com
-$ curl http://google.com
-Right click on TCP Packet > Follow - TCP Stream
-Step 9: Click on File > save as .pcapng. > To Stop capture CTRL+C
-Step 10: Analyze Statistics
+Step 4: Start Capturing Packets
+1.	Click the blue Shark Fin icon.
+2.	Network packets begin appearing in real time.
+
+Step 5: Generate Network Traffic
+Open a browser and visit websites such as:
+https://www.google.com
+https://www.wikipedia.org
+Or execute:
+ping google.com
+This generates packets for analysis.
+  
+Step 6: Stop Packet Capture
+1.	Click the red Stop button.
+2.	Packet capture is halted.
+
+Step 7: Analyze Captured Packets
+Observe the three Wireshark panes:
+Packet List Pane
+Displays captured packets.
+Packet Details Pane
+Shows protocol information.
+Packet Bytes Pane
+Displays packet contents in hexadecimal format.
+ 
+Step 8: Apply Display Filters
+View HTTP Traffic-http
+View DNS Traffic-dns
+View TCP Packets-tcp
+View ICMP (Ping) Packets-icmp
+View Traffic from Specific IP-ip.addr == 8.8.8.8
+Press Enter after entering the filter.
+ 
+Step 9: Inspect Packet Details
+1.	Select a packet.
+2.	Expand:
+o	Ethernet II
+o	Internet Protocol (IP)
+o	Transmission Control Protocol (TCP)
+o	Hypertext Transfer Protocol (HTTP)
+3.	Note:
+o	Source IP Address
+o	Destination IP Address
+o	Protocol Used
+o	Packet Length
+
+Step 10: Follow a TCP Stream
+1.	Right-click a TCP packet.
+2.	Select:
+Follow → TCP Stream
+3.	View communication between client and server.
+4.	Close the window after analysis.
+ 
+Step 11: Save the Capture
+1.	Click File → Save As.
+2.	Save as:
+network_capture.pcapng
+3.	Choose a destination folder.
+
+Step 12: Reopen Saved Capture
+1.	Select:
+File → Open
+2.	Browse to the saved. pcapng file.
+3.	Open it for further analysis.
