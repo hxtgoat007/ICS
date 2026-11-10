@@ -4,7 +4,7 @@ Step 1: Open Terminal
  
 Step 2: Launch Wireshark
 Type the following command:
-Sudo wireshark
+sudo wireshark
 Or open it from:
 Applications → Sniffing & Spoofing → Wireshark
   
