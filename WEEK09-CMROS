@@ -1,3 +1,7 @@
+Inputs: Open https://github.com/rampriyakilari/ICS-Needs. Download CMROS.zip Extract it.
+
+Open VM Ware > Click on Open a Virtual Machine > Select CMR_OS > Name it as CMROS 1 >   Click import.
+
 1. Start the CMROS virtual machine and note its IP address.
   192.168.71.129
 
